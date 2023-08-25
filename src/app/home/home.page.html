@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar> 
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
     <ion-back-button default-href="#" routerLink="/login"></ion-back-button>
     </ion-buttons>
     <ion-title>
@@ -9,10 +9,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="home-section ion-padding">
+<ion-content [fullscreen]="true" >
+  <div class="home-section ion-padding" >
 
-    <div class="heading ion-padding">
+    <div class="heading ion-padding" >
       <h1 class="title-animation"> Bienvenido!</h1>
       <p class="ion-text-start ion-margin"> Usuario: {{usuario}}</p>
       <h1> Informacion Adicional</h1>
@@ -34,13 +34,14 @@
               </ion-select>
             </ion-item>
             <ion-item>
-              <ion-label> Fecha de nacimiento</ion-label>
+              <!-- <ion-label> Fecha de nacimiento</ion-label>
               <ion-datetime-button datetime="datetime"></ion-datetime-button>
               <ion-modal [keepContentsMounted]="true">
                 <ng-template>
                   <ion-datetime presentation="date" id="datetime"></ion-datetime>
                 </ng-template>
-              </ion-modal>
+              </ion-modal> -->
+              <ion-datetime  presentation="date" color="rose"></ion-datetime>
             </ion-item>
             
           </ion-list>

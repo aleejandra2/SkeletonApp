@@ -2,6 +2,12 @@ ion-content{
     --background: url(../../assets/image/Sakura.jpg) no-repeat center/cover fixed;
 }
 
+.scroll-content {
+    max-height: calc(100vh - 56px); /* Ajusta el valor según tu barra de herramientas */
+    overflow-y: auto;
+  }
+  
+
 .login-section{
     height: 80vh;
     width: 100%;

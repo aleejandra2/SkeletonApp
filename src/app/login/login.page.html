@@ -1,5 +1,5 @@
 
-<ion-content>
+<ion-content  class="scroll-content">
   <div class="login-section ion-padding">
     <div class="heading ion-padding">
       <h1> SkeletonApp</h1>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="action-button ion-padding">
-      <ion-button (click)="guardar()" size="small" class="login-button" routerLink="/home"  > Ingresar</ion-button>
+      <ion-button (click)="guardar()" size="small" class="login-button" routerLink="/home" [disabled]="usuario.length < 3 || usuario.length > 8 || contrasenia.invalid || contrasenia.value.length !== 4"> Ingresar</ion-button>
       <p></p>
     </div>
   </div> 
