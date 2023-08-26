@@ -17,8 +17,12 @@ export class HomePage {
   private input1!: Animation;
   private input2!: Animation;
 
-  constructor(private alertController: AlertController,
-    private sharedData: CompartirDatosService,private animationCtrl: AnimationController) { }
+  constructor(
+    private alertController: AlertController,
+    private sharedData: CompartirDatosService,
+    private animationCtrl: AnimationController
+    ) { }
+
     usuario:string ='';
     nombre: string = '';
     apellido: string = '';
@@ -84,8 +88,9 @@ export class HomePage {
         });
         
         this.animacionInputs.stop();
-      });
-        
+      });  
     }
+    
+
     
 }
