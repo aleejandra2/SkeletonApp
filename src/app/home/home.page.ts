@@ -3,6 +3,7 @@ import type { QueryList } from '@angular/core';
 import { CompartirDatosService } from 'src/app/compartir-datos.service';
 import type { Animation } from '@ionic/angular';
 import { AlertController, AnimationController, IonInput } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class HomePage {
   constructor(
     private alertController: AlertController,
     private sharedData: CompartirDatosService,
-    private animationCtrl: AnimationController
+    private animationCtrl: AnimationController,
+    private activatedRoute: ActivatedRoute
     ) { }
 
     usuario:string ='';
@@ -52,7 +54,8 @@ export class HomePage {
       this.fechaNacimiento = '';
     }
     mostrarUsuario(){
-      this.usuario = this.sharedData.usuario;
+      this.usuario = this.activatedRoute.snapshot.params["username"];
+
       
     }
 

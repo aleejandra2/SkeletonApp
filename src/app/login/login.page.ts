@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompartirDatosService } from 'src/app/compartir-datos.service';
+import {  Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -10,9 +12,10 @@ export class LoginPage implements OnInit {
 
   usuario: string = '';
   contrasenia: number =0;
-  constructor(private sharedData: CompartirDatosService) {}
+  constructor(private sharedData: CompartirDatosService, private router:Router) {}
   guardar(){
-    this.sharedData.usuario = this.usuario;
+    this.router.navigateByUrl("home/" + this.usuario);
+    
   }
 
   ngOnInit() {
