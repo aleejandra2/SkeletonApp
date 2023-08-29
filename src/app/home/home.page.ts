@@ -30,7 +30,7 @@ export class HomePage {
     fechaNacimiento: string = '';
     
     public alertButtons = ['OK'];
-
+    
     async mostrar() {
       const alert = await this.alertController.create({
         header: `${this.sharedData.usuario}`,
