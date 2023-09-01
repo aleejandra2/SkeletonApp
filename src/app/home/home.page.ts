@@ -1,9 +1,10 @@
-import { Component, OnInit, ElementRef, ViewChildren} from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChildren, ViewChild} from '@angular/core';
 import type { QueryList } from '@angular/core';
 import { CompartirDatosService } from 'src/app/compartir-datos.service';
 import type { Animation } from '@ionic/angular';
 import { AlertController, AnimationController, IonInput } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { MatInput } from '@angular/material/input';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage {
 
   @ViewChildren(IonInput, { read: ElementRef }) inputs!: QueryList<ElementRef>;
+  @ViewChild('fechaNacimiento', { read: MatInput }) fechaNacimiento!: MatInput;
+  
   private animacionInputs!: Animation;
   private input1!: Animation;
   private input2!: Animation;
@@ -29,13 +32,12 @@ export class HomePage {
     nombre: string = '';
     apellido: string = '';
     nivelEducacional: string = '';
-    fechaNacimiento: string = '';
     
     public alertButtons = ['OK'];
     
     async mostrar() {
       const alert = await this.alertController.create({
-        header: `${this.sharedData.usuario}`,
+        header: `${this.activatedRoute.snapshot.params["username"]}`,
         subHeader: `Su nombre es ${this.nombre} ${this.apellido}`,
         buttons: ['Aceptar']
       });
@@ -51,7 +53,7 @@ export class HomePage {
       this.nombre = '';
       this.apellido = '';
       this.nivelEducacional = '';
-      this.fechaNacimiento = '';
+      this.fechaNacimiento.value = '';
     }
     mostrarUsuario(){
       this.usuario = this.activatedRoute.snapshot.params["username"];
