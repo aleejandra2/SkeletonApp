@@ -34,14 +34,15 @@
               </ion-select>
             </ion-item>
             <ion-item>
-              <ion-label> Fecha de nacimiento</ion-label>
-              <ion-datetime-button datetime="datetime"></ion-datetime-button>
-              <ion-modal [keepContentsMounted]="true">
-                <ng-template>
-                  <ion-datetime presentation="date" id="datetime" color="rose"></ion-datetime>
-                </ng-template>
-              </ion-modal>
-              <!-- <ion-datetime  presentation="date" color="rose"></ion-datetime> -->
+              <!-- <ion-label> Fecha de nacimiento</ion-label> -->
+              <mat-form-field>
+                <mat-label>MM/DD/YYYY</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>Fecha de nacimiento</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              
             </ion-item>
             
             
